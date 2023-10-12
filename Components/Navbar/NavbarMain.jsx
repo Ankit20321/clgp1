@@ -1,70 +1,39 @@
 import React from "react";
 import "./navbarmain.css";
+import { Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
+import ellipse1 from './ellipse1.png';
+import vector6 from "./vector6.svg";
+import vector7 from "./vector7.svg";
+import vector8 from "./vector8.svg";
+
+
 
 const NavbarMain = () => {
     return (
-        <div className="sign-up-page">
-            <div className="group-wrapper">
-                <div className="group">
-                    <div className="overlap">
-                        <div className="frame">
-                            <div className="text-wrapper">Welcome Back!</div>
-                            <p className="already-have-an">
-                                Already have an account ?<br />
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Then Sign-in
-                            </p>
-                            <div className="overlap-group-wrapper">
-                                <div className="overlap-group">
-                                    <div className="rectangle" />
-                                    <div className="log-in">LOG IN</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="div">
-                            <div className="text-wrapper-2">Sign Up</div>
-                            <div className="frame-2">
-                                <div className="div-wrapper">
-                                    <div className="vector-wrapper">
-                                        <img className="vector" alt="Vector" src="/img/vector-3.svg" />
-                                    </div>
-                                </div>
-                                <div className="overlap-wrapper">
-                                    <div className="overlap-2">
-                                        <div className="ellipse" />
-                                        <img className="img" alt="Rectangle" src="/img/rectangle-4.png" />
-                                    </div>
-                                </div>
-                                <div className="group-2">
-                                    <div className="img-wrapper">
-                                        <img className="vector-2" alt="Vector" src="/img/vector-2.svg" />
-                                    </div>
-                                </div>
-                            </div>
-                            <p className="p">or create your email account</p>
-                            <div className="group-3">
-                                <div className="overlap-3">
-                                    <img className="vector-3" alt="Vector" src="/img/vector-1.svg" />
-                                    <div className="text-wrapper-3">Email</div>
-                                </div>
-                            </div>
-                            <div className="group-4">
-                                <div className="overlap-4">
-                                    <img className="vector-4" alt="Vector" src="/img/vector.svg" />
-                                    <div className="rectangle-2" />
-                                    <div className="text-wrapper-3">Password</div>
-                                </div>
-                            </div>
-                            <div className="group-5">
-                                <div className="overlap-5">
-                                    <div className="rectangle-3" />
-                                    <div className="sign-up">SIGN UP</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <div className="front-logged-in">
+            <div className="rectangle-6" />
+            <header className="header">
+                <div className="rectangle-7" />
+                <p className="travel-reads">
+                    <span className="span">Travel</span>
+                    <span className="text-wrapper-5">Reads</span>
+                </p>
+                <input className="rectangle-8" type="text" placeholder="Search" />
+                <img className="vector" alt="Vector" src={vector8} />
+                <div className="text-wrapper-6"></div>
+                <img className="vector-2" alt="Vector" src={vector7} />
+                <div className="text-wrapper-7">Indore</div>
+                <img className="vector-3" alt="Vector" src={vector6} />
+                <div className="ellipse" />
+                <Link className="nav-link" to="/SignIn"> <img className="ellipse-2" alt="Ellipse" src={ellipse1} /></Link>
+            </header>
+            <div className="rectangle-9" />
+            <div className="overlap-group-3">
             </div>
+            <Outlet />
         </div>
+
     );
 };
 
