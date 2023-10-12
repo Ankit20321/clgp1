@@ -1,19 +1,13 @@
-.log-in-page {
-    background-color: rgba(255, 255, 255, 1);
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
-}
-
 .log-in-page .group-wrapper {
     background: linear-gradient(180deg,
             rgba(213.3, 160.23, 255, 0.87) 0%,
             rgba(250.34, 253.52, 253.73, 0.68) 48.02%,
             rgba(7.23, 210.4, 255, 0.58) 100%);
     background-color: rgba(255, 255, 255, 1);
-    height: 1254.31px;
-    width: 1725px;
+    height: 1255.03px;
+    width: 100%;
+
+
 }
 
 .log-in-page .group {
@@ -92,25 +86,25 @@
             rgba(180, 230, 219, 0.63) 38.54%,
             rgba(181, 231, 222, 0.63) 56.25%,
             rgba(98, 166, 165, 0.63) 100%);
-    border-radius: 39.44px;
-    box-shadow: 1.31px 5.26px 6.57px 3.94px #62aaa7;
+    border-radius: 39.47px;
+    box-shadow: 1.32px 5.26px 6.58px 3.95px #62aaa7;
     height: 93px;
-    left: 0;
+    left: -60px;
     position: absolute;
-    top: 0;
+    top: -120px;
     width: 322px;
 }
 
 .log-in-page .sign-up {
     color: #ffffff;
     font-family: "Inter", Helvetica;
-    font-size: 47.3px;
+    font-size: 47.4px;
     font-weight: 500;
-    left: 53px;
+    left: 11px;
     letter-spacing: 0;
     line-height: normal;
     position: absolute;
-    top: 20px;
+    top: -100px;
     width: 242px;
 }
 
@@ -142,7 +136,7 @@
     align-items: center;
     display: inline-flex;
     gap: 23.67px;
-    left: 210px;
+    left: 5px;
     position: absolute;
     top: 200px;
 }

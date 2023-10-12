@@ -2,13 +2,7 @@
     width: 100%;
 }
 
-.front-logged-in {
-    background-color: #e5e8dd;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
-}
+
 
 
 
@@ -42,14 +36,6 @@
 
 
 
-/* .front-logged-in .rectangle-6 {
-    background-color: #a3a3a3;
-    height: 100%;
-    left: 2px;
-    position: absolute;
-    top: 0;
-    width: 100%;
-} */
 
 .front-logged-in .header {
     align-items: flex-start;

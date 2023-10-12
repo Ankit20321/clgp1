@@ -12,7 +12,7 @@ import vector8 from "./vector8.svg";
 const NavbarMain = () => {
     return (
         <div className="front-logged-in">
-            <div className="rectangle-6" />
+
             <header className="header">
                 <div className="rectangle-7" />
                 <p className="travel-reads">
@@ -28,7 +28,6 @@ const NavbarMain = () => {
                 <div className="ellipse" />
                 <Link className="nav-link" to="/SignIn"> <img className="ellipse-2" alt="Ellipse" src={ellipse1} /></Link>
             </header>
-            <div className="rectangle-9" />
             <div className="overlap-group-3">
             </div>
             <Outlet />

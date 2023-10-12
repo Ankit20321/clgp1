@@ -1,5 +1,6 @@
 import React from "react";
 import "./signIn.css";
+import { signInWithGooglePopup, createUserDocumentFromAuth } from "../firebase/firebase.utils";
 import { Outlet } from "react-router-dom";
 import vectorl1 from './vectorl1.svg';
 import vectorl2 from './vectorl2.svg';
@@ -7,7 +8,13 @@ import vectorl3 from './vectorl3.svg';
 import vectorl4 from './vectorl4.svg';
 import rectanglel4 from './rectanglel4.png';
 
+
 const SignIn = () => {
+    const logGoogleUser = async () => {
+        const { user } = await signInWithGooglePopup();
+        createUserDocumentFromAuth(user);
+    }
+
     return (
         <div>
 
@@ -36,7 +43,8 @@ const SignIn = () => {
                                     <div className="overlap-wrapper">
                                         <div className="overlap-2">
                                             <div className="ellipse" />
-                                            <img className="img" alt="Rectangle" src={rectanglel4} />
+                                            <button><img className="img" alt="Rectangle" src={rectanglel4} onClick={logGoogleUser} /></button>
+
                                         </div>
                                     </div>
                                     <div className="group-2">
