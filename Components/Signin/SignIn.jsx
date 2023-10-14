@@ -1,6 +1,7 @@
 import React from "react";
 import "./signIn.css";
-import { signInWithGooglePopup, createUserDocumentFromAuth } from "../firebase/firebase.utils";
+import { Link } from "react-router-dom";
+import { signInWithGooglePopup, createUserDocumentFromAuth, signInWithFacebookPopup } from "../firebase/firebase.utils";
 import { Outlet } from "react-router-dom";
 import vectorl1 from './vectorl1.svg';
 import vectorl2 from './vectorl2.svg';
@@ -15,6 +16,20 @@ const SignIn = () => {
         const userDocRef = await createUserDocumentFromAuth(user);
     }
 
+    const logFacebookUser = async () => {
+        const { user } = await signInWithFacebookPopup();
+        console.log({ user });
+    }
+    // const successCallback = (position) => {
+    //     console.log(position);
+    // };
+
+    // const errorCallback = (error) => {
+    //     console.log(error);
+    // };
+
+    // navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+
     return (
         <div>
 
@@ -27,8 +42,10 @@ const SignIn = () => {
                                 <p className="div">Enter Your Personal Realm: Create Your Unique Profile</p>
                                 <div className="overlap-group-wrapper">
                                     <div className="overlap-group">
-                                        <div className="rectangle" />
-                                        <div className="sign-up">SIGN UP</div>
+                                        <Link className="nav-link" to="/SignUp"> <div className="rectangle" />
+                                            <div className="sign-up">
+                                                SIGN UP
+                                            </div></Link>
                                     </div>
                                 </div>
                             </div>
@@ -37,7 +54,7 @@ const SignIn = () => {
                                 <div className="frame-3">
                                     <div className="div-wrapper">
                                         <div className="vector-wrapper">
-                                            <img className="vector" alt="Vector" src={vectorl4} />
+                                            <button><img className="vector" alt="Vector" src={vectorl4} onClick={logFacebookUser} /></button>
                                         </div>
                                     </div>
                                     <div className="overlap-wrapper">

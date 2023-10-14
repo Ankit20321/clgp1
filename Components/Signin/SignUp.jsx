@@ -1,5 +1,7 @@
 import React from "react";
 import "./signUp.css";
+import { Link } from "react-router-dom";
+
 import vectorr1 from './vectorr1.svg';
 import vectorr2 from './vectorr2.svg';
 import vectorr3 from './vectorr3.svg';
@@ -20,8 +22,8 @@ const SignUp = () => {
                             </p>
                             <div className="overlap-group-wrapper">
                                 <div className="overlap-group">
-                                    <div className="rectangle" />
-                                    <div className="log-in">LOG IN</div>
+                                    <Link className="nav-link" to='/SignIn'>  <div className="rectangle" />
+                                        <div className="log-in">LOG IN</div></Link>
                                 </div>
                             </div>
                         </div>

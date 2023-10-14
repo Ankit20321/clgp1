@@ -1,0 +1,119 @@
+.macbook-pro {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.macbook-pro .group {
+    height: 138px;
+    left: 2px;
+    position: absolute;
+    top: 126px;
+    width: 1725px;
+}
+
+.macbook-pro .navbar-wrapper {
+    background-color: #ffffff;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-color: #c0bebe;
+    height: 140px;
+    left: -1px;
+    position: relative;
+    top: -1px;
+    width: 1727px;
+}
+
+.macbook-pro .navbar {
+    height: 59px;
+    left: 273px;
+    position: relative;
+    top: 47px;
+    width: 1176px;
+}
+
+.macbook-pro .vector-3 {
+    height: 50px;
+    left: 0;
+    position: absolute;
+    top: 4px;
+    width: 50px;
+}
+
+.macbook-pro .text-wrapper-4 {
+    color: #ff0000;
+    font-family: "Lato", Helvetica;
+    font-size: 44px;
+    font-weight: 700;
+    left: 92px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 0;
+    width: 137px;
+}
+
+.macbook-pro .vector-4 {
+    height: 50px;
+    left: 271px;
+    position: absolute;
+    top: 4px;
+    width: 50px;
+}
+
+.macbook-pro .text-wrapper-5 {
+    color: #ff0202;
+    font-family: "Lato", Helvetica;
+    font-size: 44px;
+    font-weight: 700;
+    left: 363px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 0;
+    width: 137px;
+}
+
+.macbook-pro .vector-5 {
+    height: 48px;
+    left: 541px;
+    position: absolute;
+    top: 6px;
+    width: 40px;
+}
+
+.macbook-pro .text-wrapper-6 {
+    color: #ff0202;
+    font-family: "Lato", Helvetica;
+    font-size: 44px;
+    font-weight: 700;
+    left: 622px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 0;
+    width: 175px;
+}
+
+.macbook-pro .vector-6 {
+    height: 50px;
+    left: 839px;
+    position: absolute;
+    top: 4px;
+    width: 50px;
+}
+
+.macbook-pro .text-wrapper-7 {
+    color: #ff0202;
+    font-family: "Lato", Helvetica;
+    font-size: 44px;
+    font-weight: 700;
+    left: 931px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 0;
+    width: 237px;
+}

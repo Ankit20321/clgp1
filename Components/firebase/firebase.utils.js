@@ -2,10 +2,11 @@
 import { initializeApp } from "firebase/app";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
-import { getAuth, signInWithRedirect, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
+import { getAuth, signInWithRedirect, signInWithPopup, GoogleAuthProvider, FacebookAuthProvider } from 'firebase/auth';
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 import { getFirestore, doc, getDoc, setDoc } from 'firebase/firestore'
+
 
 const firebaseConfig = {
     apiKey: "AIzaSyCEnFoxUP8xehJCWrC5rqMtw_VGGhdiYAc",
@@ -25,8 +26,15 @@ provider.setCustomParameters({
     prompt: "select_account"
 });
 
+const Fprovider = new FacebookAuthProvider();
+provider.setCustomParameters({
+    prompt: "select_account"
+});
+
 export const auth = getAuth();
 export const signInWithGooglePopup = () => signInWithPopup(auth, provider);
+export const signInWithGoogleRedirect = () => signInWithRedirect(auth, provider);
+export const signInWithFacebookPopup = () => FacebookAuthProvider(auth, Fprovider);
 
 
 export const db = getFirestore();

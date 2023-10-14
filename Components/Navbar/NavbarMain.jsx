@@ -6,6 +6,7 @@ import ellipse1 from './ellipse1.png';
 import vector6 from "./vector6.svg";
 import vector7 from "./vector7.svg";
 import vector8 from "./vector8.svg";
+import Navbar2 from "../Navbar2/Navbar2";
 
 
 
@@ -15,10 +16,10 @@ const NavbarMain = () => {
 
             <header className="header">
                 <div className="rectangle-7" />
-                <p className="travel-reads">
+                <Link className="nav-link" to='/'>  <p className="travel-reads">
                     <span className="span">Travel</span>
                     <span className="text-wrapper-5">Reads</span>
-                </p>
+                </p></Link>
                 <input className="rectangle-8" type="text" placeholder="Search" />
                 <img className="vector" alt="Vector" src={vector8} />
                 <div className="text-wrapper-6"></div>
