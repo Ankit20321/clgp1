@@ -19,7 +19,7 @@ const Navbar2 = () => {
                         <img className="vector-4" alt="Vector" src={vector24} />
                         <div className="text-wrapper-5">About</div>
                         <img className="vector-5" alt="Vector" src={vector23} />
-                        <div className="text-wrapper-6">Explore</div>
+                        <Link className='nav-link' to='/explore'> <div className="text-wrapper-6">Explore</div></Link>
                         <img className="vector-6" alt="Vector" src={vector22} />
                         <Link className='nav-link' to='/favorite'> <div className="text-wrapper-7">Favorite</div></Link>
                     </div>
@@ -27,7 +27,7 @@ const Navbar2 = () => {
                 <Outlet />
             </div>
 
-        </div>
+        </div >
     )
 }
 

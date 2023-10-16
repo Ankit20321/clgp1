@@ -7,6 +7,7 @@ import group94 from './group-94.png';
 
 
 
+
 const Favorites = () => {
     return (
         <div macbook-pro>
@@ -198,6 +199,7 @@ const Favorites = () => {
                 </div>
             </div>
             <div className="rectangle-5" />
+
         </div>
     )
 }
