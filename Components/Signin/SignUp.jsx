@@ -1,6 +1,8 @@
 import React from "react";
 import "./signUp.css";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import { createAuthUserWithEmailAndPassword } from "../firebase/firebase.utils";
 
 import vectorr1 from './vectorr1.svg';
 import vectorr2 from './vectorr2.svg';
@@ -8,7 +10,39 @@ import vectorr3 from './vectorr3.svg';
 import vectorr4 from './vectorr4.svg';
 import rectangler4 from './rectangler4.png';
 
+const defaultFormField = {
+    displayName: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+};
+
 const SignUp = () => {
+    const [formfields, setFormFields] = useState(defaultFormField);
+    const { displayName, email, password, confirmPassword } = formfields;
+
+    console.log(formfields);
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        if (password != confirmPassword) {
+            alert("password do not match");
+            return;
+        }
+        try {
+            const response = await createAuthUserWithEmailAndPassword(email, password);
+            console.log(response);
+        } catch (error) {
+            console.log('user creation error or failed to create user', error);
+        }
+    }
+
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+        setFormFields({ ...formfields, [name]: value });
+    }
+
+
     return (
         <div className="sign-up-page">
             <div className="group-wrapper">
@@ -49,24 +83,32 @@ const SignUp = () => {
                             </div>
                             <p className="p">or create your email account</p>
                             <div className="group-3">
-                                <div className="overlap-3">
+                                <form className="overlap-3" onSubmit={handleSubmit}>
+                                    <input className="overlap-3" type='text' placeholder="Display Name" required onChange={handleChange} name="displayName" value={displayName} />
+                                    <input className="overlap-32" type='email' placeholder="Email Address" required onChange={handleChange} name="email" value={email} />
+                                    <img className="vector-3" alt="Vector" src={vectorr2} />
+                                    <input className="overlap-33" type='password' placeholder="Password" required onChange={handleChange} name="password" value={password} />
+                                    <input className="overlap-34" type='password' placeholder="confirm Password" required onChange={handleChange} name="confirmPassword" value={confirmPassword} />
+                                    <img className="vector-4" alt="Vector" src={vectorr1} />
+
+                                    <button className="rectangle-3" type="submit">Sign Up</button>
+                                </form>
+                                {/* <form className="overlap-31">
                                     <img className="vector-3" alt="Vector" src={vectorr2} />
                                     <div className="text-wrapper-3">Email</div>
-                                </div>
+                                </form> */}
+                                {/* <form className="overlap-32">
+                                    <img className="vector-3" alt="Vector" src={vectorr2} />
+                                    <div className="text-wrapper-3">Email</div>
+                                </form> */}
                             </div>
-                            <div className="group-4">
-                                <div className="overlap-4">
-                                    <img className="vector-4" alt="Vector" src={vectorr1} />
-                                    <div className="rectangle-2" />
-                                    <div className="text-wrapper-3">Password</div>
-                                </div>
-                            </div>
-                            <div className="group-5">
+
+                            {/* <div className="group-5" >
                                 <div className="overlap-5">
                                     <div className="rectangle-3" />
                                     <div className="sign-up">SIGN UP</div>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>

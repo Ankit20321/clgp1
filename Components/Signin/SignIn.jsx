@@ -1,6 +1,7 @@
 import React from "react";
 import "./signIn.css";
 import { Link } from "react-router-dom";
+import { UserContext } from "../../src/contexts/usercontext";
 import { signInWithGooglePopup, createUserDocumentFromAuth, signInWithFacebookPopup } from "../firebase/firebase.utils";
 import { Outlet } from "react-router-dom";
 import vectorl1 from './vectorl1.svg';

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./navbarmain.css";
 import { Outlet } from "react-router-dom";
 import { Link } from "react-router-dom";
@@ -9,10 +9,18 @@ import vector8 from "./vector8.svg";
 import Navbar2 from "../Navbar2/Navbar2";
 import axios from 'axios';
 import react, { useState } from 'react';
+import { UserContext } from "../../src/contexts/usercontext";
+import { signOutUser } from "../firebase/firebase.utils";
 
 
 
 const NavbarMain = () => {
+    const { currentUser, setCurrentUser } = useContext(UserContext);
+    const signOutHandler = async () => {
+        await signOutUser();
+        setCurrentUser(null);
+    }
+
     return (
         <div className="front-logged-in">
 
@@ -29,7 +37,16 @@ const NavbarMain = () => {
                 <div className="text-wrapper-7">Indore</div>
                 <img className="vector-3" alt="Vector" src={vector6} />
                 <div className="ellipse" />
-                <Link className="nav-link" to="/SignIn"> <img className="ellipse-2" alt="Ellipse" src={ellipse1} /></Link>
+                {
+                    currentUser ? (
+                        <Span className="ellipse-2" onClick={signOutHandler} >Sign Out</Span>
+                    ) : (
+                        <Link className="nav-link" to="/SignIn"> <h1 className="ellipse-2">Sign-In</h1></Link>
+                    )
+                }
+                // <Link className="nav-link" to="/SignIn"> <h1 className="ellipse-2">Sign-In</h1>
+
+                    {/* <img className="ellipse-2" alt="Ellipse" src={ellipse1} />*/}</Link>
             </header>
             <div className="overlap-group-3">
             </div>
