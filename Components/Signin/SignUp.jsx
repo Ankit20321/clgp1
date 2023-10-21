@@ -2,7 +2,7 @@ import React from "react";
 import "./signUp.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { createAuthUserWithEmailAndPassword } from "../firebase/firebase.utils";
+import { createAuthUserWithEmailAndPassword, createUserDocumentFromAuth } from "../firebase/firebase.utils";
 
 import vectorr1 from './vectorr1.svg';
 import vectorr2 from './vectorr2.svg';
@@ -23,6 +23,10 @@ const SignUp = () => {
 
     console.log(formfields);
 
+    const resetFormField = () => {
+        setFormFields(defaultFormField);
+    }
+
     const handleSubmit = async (event) => {
         event.preventDefault();
         if (password != confirmPassword) {
@@ -30,10 +34,16 @@ const SignUp = () => {
             return;
         }
         try {
-            const response = await createAuthUserWithEmailAndPassword(email, password);
+            const { user } = await createAuthUserWithEmailAndPassword(email, password);
+            await createUserDocumentFromAuth(user, { displayName });
+            resetFormField();
             console.log(response);
         } catch (error) {
-            console.log('user creation error or failed to create user', error);
+            if (error.code == 'auth/email-already-in-use') {
+                alert('cannot create user, email already in use');
+            } else {
+                console.log('user creation encounter an error', error);
+            }
         }
     }
 

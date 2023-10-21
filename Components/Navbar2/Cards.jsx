@@ -1,6 +1,5 @@
 import react, { useState } from "react";
 import Modal from "./SearchModel";
-import './explore.css';
 const Card = ({ book }) => {
 
     const [show, setShow] = useState(false);

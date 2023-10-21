@@ -2,9 +2,7 @@ import React, { useState } from 'react'
 import Navbar2 from "../Navbar2/Navbar2";
 import axios from 'axios';
 import Cards from './Cards'
-import './explore.css';
 
-import "./explore.css";
 import { Outlet } from "react-router-dom";
 import { Link } from "react-router-dom";
 import ellipse1 from './ellipse1.png';
@@ -50,7 +48,9 @@ const Explore = () => {
             <div className="container1">
                 {
                     <Cards book={bookData} />
+
                 }
+                <Outlet />
             </div>
         </div>
     )
